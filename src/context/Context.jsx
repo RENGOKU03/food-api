@@ -44,6 +44,7 @@ function GlobalFoodState({ children }) {
       copyList.splice(index, 1);
     }
     setFavoriteList(copyList);
+    localStorage.setItem("favorites", JSON.stringify(copyList));
   }
   return (
     <FoodContext.Provider

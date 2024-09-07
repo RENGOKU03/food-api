@@ -5,10 +5,7 @@ import Card from "../../components/Card";
 const Favorites = () => {
   const { setFavoriteList, favoriteList } = useContext(FoodContext);
   useEffect(() => {
-    localStorage.setItem("favoriteList", JSON.stringify(favoriteList));
-  }, [favoriteList]);
-  useEffect(() => {
-    const storedList = localStorage.getItem("favoriteList");
+    const storedList = localStorage.getItem("favorites");
     if (storedList) {
       const parsedList = JSON.parse(storedList);
       if (parsedList) {
