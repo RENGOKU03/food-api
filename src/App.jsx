@@ -9,7 +9,7 @@ import ErrorElement from "./components/ErrorElement";
 function App() {
   return (
     <>
-      <div>
+      <div className="w-screen overflow-hidden">
         <NavBar />
         <Routes>
           <Route element={<Home />} path="/"></Route>

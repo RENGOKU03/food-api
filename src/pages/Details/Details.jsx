@@ -39,19 +39,21 @@ const Details = () => {
   return (
     <div className="h-full">
       {recipeDetails ? (
-        <div className="flex gap-10 ">
-          <div className="max-h-[700px] w-1/2 m-4 rounded-3xl shadow-2xl overflow-hidden shadow-gray-500 hover:shadow-black">
-            <img
-              src={recipeDetails.image_url}
-              alt={recipeDetails.title}
-              className="w-full aspect-[9:21] object-cover rounded-3xl hover:scale-105 duration-300"
-            />
+        <div className="md:grid grid-cols-2 gap-10 ">
+          <div className="md:h-[700px]">
+            <div className=" m-4 rounded-3xl shadow-2xl overflow-hidden shadow-gray-500 hover:shadow-black">
+              <img
+                src={recipeDetails.image_url}
+                alt={recipeDetails.title}
+                className="w-full aspect-[9:21] object-cover rounded-3xl hover:scale-105 duration-300"
+              />
+            </div>
           </div>
-          <div className="flex flex-col w-1/2 p-5 rounded-xl font-semibold text-3xl gap-3">
-            <span className="text-teal-500">{recipeDetails.publisher}</span>
+          <div className="flex flex-col  p-5 rounded-xl font-semibold text-3xl gap-3 items-center md:items-start">
+            <span className="text-teal-500 ">{recipeDetails.publisher}</span>
             <span className="font-bold text-4xl">{recipeDetails.title}</span>
             <button
-              className="p-3 bg-black text-white uppercase text-2xl rounded-xl w-fit px-10 shadow-xl shadow-gray-500 hover:shadow-black mb-3"
+              className="md:p-3 px-4 py-2 sm:max-w-fit bg-black text-white uppercase text-2xl rounded-xl md:w-fit md:px-10 shadow-xl shadow-gray-500 hover:shadow-black mb-3 "
               onClick={() => handleAddToFavorite(recipeDetails)}
             >
               {favoriteList &&
@@ -62,10 +64,10 @@ const Details = () => {
                 ? "Remove from favorite"
                 : "Add to favorite"}
             </button>
-            <ul className="flex gap-2 flex-col list-disc">
+            <ul className="flex gap-2 flex-col list-disc mx-2">
               {recipeDetails.ingredients.map((item, index) => (
-                <li key={index}>
-                  <span>{item.quantitiy}</span>
+                <li key={index} className="flex gap-2">
+                  <span>{item.quantity}</span>
                   <span>{item.description}</span>
                 </li>
               ))}

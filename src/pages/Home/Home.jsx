@@ -11,7 +11,7 @@ const Home = () => {
 
   return (
     <div className="m-5">
-      <div className="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-4 gap-x-5 gap-y-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5">
         {recipelist
           ? recipelist.map((item) => <Card key={item.id} item={item} />)
           : null}
@@ -19,6 +19,13 @@ const Home = () => {
       {searchParam ? (
         <div className="text-center text-6xl font-bold p-10 ">
           No results found
+        </div>
+      ) : null}
+      {!searchParam ? (
+        <div>
+          <p className="text-center text-6xl font-bold p-10 [text-shadow: 5px 5px #558ABB]">
+            Search For Recipes
+          </p>
         </div>
       ) : null}
     </div>

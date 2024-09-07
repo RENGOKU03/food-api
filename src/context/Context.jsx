@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 export const FoodContext = createContext(null);
 
 function GlobalFoodState({ children }) {
-  const [searchParam, setSearchParam] = useState("mango");
+  const [searchParam, setSearchParam] = useState("");
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
   const [recipelist, setRecipeList] = useState([]);
